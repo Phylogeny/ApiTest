@@ -65,7 +65,7 @@ public class ItemBitTool extends Item
 			if ( itemstack != null && ( timer == null || timer.elapsed( TimeUnit.MILLISECONDS ) > 150 ) )
 			{
 				timer = Stopwatch.createStarted();
-				if ( !player.world.isRemote )
+				if ( !player.worldObj.isRemote )
 				{
 					return true;
 				}
@@ -75,7 +75,7 @@ public class ItemBitTool extends Item
 				final Vec3d ray_to = PlayerRay.getRight();
 
 				@SuppressWarnings("deprecation")
-				final RayTraceResult mop = player.world.getBlockState( pos ).getBlock().collisionRayTrace( player.world.getBlockState( pos ), player.world, pos, ray_from, ray_to );
+				final RayTraceResult mop = player.worldObj.getBlockState( pos ).getBlock().collisionRayTrace( player.worldObj.getBlockState( pos ), player.worldObj, pos, ray_from, ray_to );
 				if ( mop != null && mop.typeOfHit == RayTraceResult.Type.BLOCK )
 				{
 					IBitLocation bitLoc = ApiTest.apiInstance.getBitPos((float) mop.hitVec.xCoord - pos.getX(),
@@ -101,7 +101,7 @@ public class ItemBitTool extends Item
 	 * Add/remove sphere of bits on right click.
 	 */
 	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos,
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos,
 			EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
 		if (world.isRemote)

@@ -39,14 +39,14 @@ public class PacketUseBitTool implements IMessage
 		@Override
 		public IMessage onMessage(final PacketUseBitTool message, final MessageContext ctx)
 		{
-			IThreadListener mainThread = (WorldServer) ctx.getServerHandler().playerEntity.world;
+			IThreadListener mainThread = (WorldServer) ctx.getServerHandler().playerEntity.worldObj;
 			mainThread.addScheduledTask(new Runnable()
 			{
 				@Override
 				public void run()
 				{
 					EntityPlayer player = ctx.getServerHandler().playerEntity;
-					ItemBitTool.useTool(player.world, player, message.center);
+					ItemBitTool.useTool(player.worldObj, player, message.center);
 				}
 			});
 			return null;

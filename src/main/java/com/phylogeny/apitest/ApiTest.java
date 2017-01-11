@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 @ChiselsAndBitsAddon
 @Mod(modid = ApiTest.MOD_ID,
 	 version = ApiTest.VERSION,
-	 dependencies = "required-after:chiselsandbits" + "@[13.0,)")
+	 dependencies = "required-after:chiselsandbits" + "@[11.0,)")
 public class ApiTest implements IChiselsAndBitsAddon
 {
 	public static final String MOD_ID = "apitest";
