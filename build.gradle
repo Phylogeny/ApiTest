@@ -36,7 +36,7 @@ repositories {
 }
 
 dependencies {
-    compile files ("libs/" + chisels_and_bits_api)
+    compile files ("run/mods/" + chisels_and_bits + ".jar")
 	deobfCompile "mezz.jei:${jei_version}"
 }
 
